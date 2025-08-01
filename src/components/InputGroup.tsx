@@ -39,11 +39,11 @@ function CatchForm() {
         return JSON.parse(text);
       })
       .then((data) => {
-        console.log("✅ Catch submitted:", data);
+        console.log("Catch submitted:", data);
         alert("Catch submitted!");
       })
       .catch((err) => {
-        console.error("❌ Error submitting catch:", err.message);
+        console.error("Error submitting catch:", err.message);
         alert(`Error: ${err.message}`);
       });
   };
