@@ -27,7 +27,6 @@ function HeaviestBass() {
             a.weight > b.weight ? a : b
           );
 
-          // Convert `photo` → `photoUrl`
           const mappedBiggest: CatchData = {
             username: biggest.username,
             species: biggest.species,
@@ -36,7 +35,6 @@ function HeaviestBass() {
             photoUrl: biggest.photo_filename
               ? `/uploads/${biggest.photo_filename}`
               : null,
-            // adapt this if you're storing full path
           };
 
           setHeaviest(mappedBiggest);
@@ -55,7 +53,7 @@ function HeaviestBass() {
   if (error) return <p style={{ color: "red" }}>Error: {error}</p>;
   if (!heaviest) return <p>No bass catches found.</p>;
 
-  console.log("Heaviest bass:", heaviest); // ← ADD THIS
+  console.log("Heaviest bass:", heaviest);
 
   return <GlobalGroup {...heaviest} />;
 }
