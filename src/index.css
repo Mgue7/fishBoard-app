@@ -1,0 +1,82 @@
+.bg-navbar {
+  background-color: #bfc4cc !important;
+}
+
+.btn-search {
+  color: #0d265c !important;
+  border-color: #0d265c !important;
+}
+
+.btn-search:hover {
+  background-color: #0d265c !important;
+  color: white !important;
+}
+
+body {
+  background-color: #0d265c;
+  color: white;
+}
+
+.brand-text {
+  font-family: 'Funnel Display', sans-serif; 
+  font-weight: bold;
+  font-size: 1.75rem;
+  letter-spacing: 2px;
+}
+
+.listgroup-position1 {
+  position: absolute;
+  top: 500px;
+  left: 450px;
+  width: 250px;
+}
+
+.home-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  padding: 100px;
+}
+
+.image-position {
+  display: block;
+  width: 200px;
+  height: auto;
+  object-fit: contain;
+  margin: 0 auto 10px auto; /* top: 0, right/left: auto, bottom: 10px */
+}
+
+.listgroup-position3 {
+  width: 300px;
+  text-align: left;
+  word-wrap: break-word;
+}
+
+.button-position {
+  margin-top: -20px;
+}
+
+
+
+/* .listgroup-position3 {
+  position: absolute;
+  top: 500px;
+  left: 605px;
+  width: 250px;
+}
+
+.button-position {
+  position: absolute;
+  top: 700px;
+  left: 650px;
+  width: 250px;
+}
+
+.image-position {
+  position: absolute;
+  top: 100px;
+  left: 600px;
+  width: 250px;
+
+} */
