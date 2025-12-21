@@ -7,7 +7,6 @@ import os
 app = Flask(__name__)
 CORS(app)
 
-# Make sure the upload folder exists with proper permissions
 app.config['UPLOAD_FOLDER'] = os.path.join('static', 'uploads')
 os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
 os.chmod(app.config['UPLOAD_FOLDER'], 0o755)
@@ -25,7 +24,7 @@ class Catch(db.Model):
     length = db.Column(db.Float, nullable=False)
     photo_filename = db.Column(db.String(200))
     
-@app.route('/uploads/<filename>')  # Different URL pattern
+@app.route('/uploads/<filename>') 
 def uploaded_file(filename):
     upload_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'static', 'uploads')
     return send_from_directory(upload_path, filename)
@@ -33,7 +32,6 @@ def uploaded_file(filename):
 @app.route('/debug/clear-database-get', methods=['GET'])
 def clear_database_get():
     try:
-        # Delete all records from the Catch table
         db.session.query(Catch).delete()
         db.session.commit()
         return jsonify({"message": "Database cleared successfully"})
@@ -43,7 +41,7 @@ def clear_database_get():
 
 @app.route('/')
 def home():
-    return "🎣 Welcome to the Fishing Leaderboard API!"
+    return "FishBoard API"
 
 @app.route('/submit-catch', methods=['POST'])
 def submit_catch():
@@ -59,7 +57,6 @@ def submit_catch():
         file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
         photo.save(file_path)
         
-        # Fix file permissions
         os.chmod(file_path, 0o644)
 
     new_catch = Catch(
