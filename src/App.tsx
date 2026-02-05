@@ -16,8 +16,3 @@ function App() {
 }
 
 export default App;
-{
-  /* <img src={logo} alt="Logo" className="logo" />
-<h1 className="header">Fishboard</h1>
-{fishList} */
-}
